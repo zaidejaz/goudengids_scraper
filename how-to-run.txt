@@ -1,0 +1,41 @@
+As i am using the linux so i am sending you this file on how to run the code. Because in linux everything is different. 
+
+First of all install python 3.10 or higher
+https://python.org/downloads
+
+Then in you command prompt run this command (Note: You must be inside the scraper folder.)
+pip install poetry
+
+After it run this command
+poetry install
+
+and then
+poetry shell
+
+After successfully running this command all of you dependencies are downloaded.
+
+Then you can run the scraper
+python main.py
+
+This will start the scraper. You must not stop the scraper until its complete otherwise you have to start over.
+
+
+And if you want to get other data then you have to make changes in the code (main.py) file.
+
+1. Find these lines inside the code.
+# Base URLs
+main_base_url = "https://www.goudengids.be/zoeken/tattoo/{}"
+detail_base_url = "https://www.goudengids.be"
+
+These are the base urls. Here it is zoken/tattoo. You should replace it to whatever you want to scraper.
+You can just copy the user and add /{} at end of it.
+
+detail_base_url will be same as the website is same.
+
+For the pages as there are many of them i have manually set it.
+As there were 68 pages of tatoos i have set the loop to 69. So in order to change it find these lines in main.py
+            for page_num in range(1, 68):  # Pages from 1 to 68
+
+            And replace the 68 with the number of pages you want to scrape.
+
+And thats it. Also you may get blocked by the website after some requests. So this is also the issue.
